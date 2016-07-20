@@ -4,9 +4,8 @@ const WeatherForm = React.createClass ({
 
     onFormSubmit(e) {
         e.preventDefault();
-        let rawLocation = this.refs.location.value;
-        let location = rawLocation.replace(/[0-9]/g, '').trim();
-        if( !parseInt(location) && location.length > 0 ) {
+        let location = this.refs.location.value
+        if(location.length > 0 ) {
              this.refs.location.value = '';
              this.props.onSearch(location);
         }
