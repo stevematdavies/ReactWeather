@@ -1,13 +1,12 @@
-const Axios = require('axios');
-const ApiConfig = require('ApiConfig');
-const OPEN_WEATHER_MAP_URL = ApiConfig.baseUrl;
+const Axios = require('axios')
+const ApiConfig = require('ApiConfig')
 
 
 module.exports = {
     getTemp(location) {
        
-        let encodedLocation = encodeURI(location);
-        let requestUrl = `${OPEN_WEATHER_MAP_URL}?appid=${ApiConfig.appId}&q=${encodedLocation}&units=${ApiConfig.units}`
+        let encodedLocation = encodeURIComponent(location);
+        let requestUrl = `${ApiConfig.baseUrl}&q=${encodedLocation}`;
 
         return Axios.get(requestUrl).then ( 
             
