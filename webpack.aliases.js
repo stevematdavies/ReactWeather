@@ -11,7 +11,8 @@ module.exports = {
     ErrorModal:  	    'app/components/ErrorModal.jsx',
     Styles:             'app/resources/styles.jsx',
     ApiConfig:          'app/api/config.jsx',
-    OpenWeatherMap:     'app/api/openWeatherMap.jsx'
+    OpenWeatherMap:     'app/api/openWeatherMap.jsx',
+    ApplicationStyles:  'app/styles/app.css'
 
     /* ----------------------------------------------------- */
 };

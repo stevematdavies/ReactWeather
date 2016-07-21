@@ -20,7 +20,7 @@ module.exports = React.createClass({
 
      render() {
 
-         let {title, message } = this.props
+         let { title, message } = this.props
 
          return (
             <div id="error-modal" className="reveal tiny text-center" data-reveal=''>
