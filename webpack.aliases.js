@@ -12,7 +12,7 @@ module.exports = {
     Styles:             'app/resources/styles.jsx',
     ApiConfig:          'app/api/config.jsx',
     OpenWeatherMap:     'app/api/openWeatherMap.jsx',
-    ApplicationStyles:  'app/styles/app.css'
+    ApplicationStyles:  'app/styles/app.scss'
 
     /* ----------------------------------------------------- */
 };
