@@ -15,14 +15,43 @@ const Weather = React.createClass({
         };
     },
 
+    /* Fired when props change
+     * E.g. when url changes with
+     * new location */    
+    componentWillReceiveProps(newProps){
+        let location = newProps.location.query.location;
+        if (location && location.length > 0) {
+            this.handleSearch(location);
+            window.location.hash = '#/';
+        }
+    },
+
+
+    componentDidMount() {
+        let location = this.props.location.query.location;
+        if (location && location.length > 0) {
+            this.handleSearch(location);
+            window.location.hash = '#/';
+        }
+    },
+
     handleSearch(location) {
-        this.setState({ isLoading: true });
+        this.setState({ 
+            isLoading: true,
+            errorMessage: undefined,
+            location: undefined,
+            temp: undefined
+        });
+
+
         OWM.getTemp(location).then ( 
+             
              (data)  => this.setState ({ 
                  isLoading: false, 
                  location: location, 
                  temp: data.main.temp,
                  name: data.name}), 
+            
              (err) => {  
                     this.setState({ 
                         isLoading: false,
